@@ -1,0 +1,30 @@
+extends layouts/handler-layout.pug
+
+block content    
+    script.
+        var councilId = '!{councilId}'
+    //- .headerButton
+    //-     .button(class='addMemberButton' data-toggle='modal', data-target='#addMemberModal')
+    //-         i.far.fa-plus-square  Add Members
+        
+    .councilInformationContainer
+        .councilInformationHeader 
+            .councilName 
+            .buttonContainer 
+                .button(class='addMemberButton' data-toggle='modal', data-target='#addMemberModal')
+                    i.far.fa-plus-square  Add Members
+                .button(class='activateCouncilButton' data-toggle='modal', data-target='#activateCouncilModal')
+                    i.fas.fa-concierge-bell  Activate Council
+        .councilDescription    
+    .councilMembersContainer        
+        .headerContainer Council Members
+        .footerContainer
+        
+    .councilUpdateButtonsContainer
+        
+
+    +createAddMemberModal()
+    +createActivateCouncilModal()
+
+block scripts
+    script(src="/js/councilUpdate.js")

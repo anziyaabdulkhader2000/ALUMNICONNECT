@@ -1,0 +1,9 @@
+extends layouts/handler-layout.pug
+
+block content 
+    .announcementContainer 
+
+    +createAnnouncementImageUploadModal()  
+
+block scripts
+    script(src="/js/updateAnnouncement.js")

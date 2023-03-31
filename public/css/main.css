@@ -1,0 +1,2466 @@
+:root {
+    --blue: #1FA2F1;
+    --blueLight: #9BD1F9;
+    --blueBackground: rgba(212, 237, 255, 0.6);
+    --buttonHoverBg: #d4edff;
+    --lightGrey: rgb(230, 236, 240);
+    --spacing: 15px;
+    --greyText: rgb(101, 119, 134);
+    --greyButtonText: rgba(0,0,0,0.34);
+    --red: rgb(226,34,94);
+    --redBackground: rgba(226,34,94,0.1);
+    --green: rgb(23,191,99);
+    --greenBackground: rgba(23,191,99,0.1);
+}
+
+@font-face
+{
+	font-family: 'Aileron-Heavy';
+	src: url(../fonts/Aileron-Heavy.otf);
+}
+
+@font-face
+{
+	font-family: 'Aileron-HeavyItalic';
+	src: url(../fonts/Aileron-HeavyItalic.otf);
+}
+
+@font-face
+{
+	font-family: 'Vollkorn-ExtraBoldItalic';
+	src: url(../fonts/Vollkorn-ExtraBoldItalic.ttf);
+}
+
+@font-face
+{
+	font-family: 'NugoSans-Light';
+	src: url(../fonts/NugoSansLight-9YzoK.ttf);
+}
+
+@font-face
+{
+	font-family: 'Alegreya-Medium-Italic';
+	src: url(../fonts/Alegreya-MediumItalic.ttf);
+}
+
+html, body {
+    height: 100%;
+    min-height: 100%;
+    background-color: #fff;
+    font-weight: 300;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+ul {
+    margin: 0;
+}
+
+* {
+    outline: none !important;
+}
+
+a {
+    color: inherit;
+}
+
+a:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 19px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.bannerContainer {
+    display: flex;    
+    flex-direction: row;      
+    color: var(--blue);
+    align-items: center;
+    background: #314755;  
+    background: -webkit-linear-gradient(to right, #26a0da, #314755);
+    background: linear-gradient(to right, #26a0da, #314755); 
+}
+
+.bannerContainer .nameContainer{
+    display: flex;    
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex: 2;
+    font-weight: 600;
+    font-size: 28px;
+    font-family: 'Vollkorn-ExtraBoldItalic';
+    color: #fff;
+    padding-left: 31px;
+    padding-top: var(--spacing);
+}
+
+.bannerContainer .navContainer{
+    display: flex;    
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex: 4;
+}
+
+.bannerContainer .navContainer a {    
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    font-weight: 500;
+    padding: var(--spacing);
+}
+
+.bannerContainer .navContainer a:hover {    
+    color: #fff;
+    background-color: rgba(255,255,255,0.5);
+    border-bottom: 2px solid var(--blueLight);
+    transition: 0.4s;
+}
+
+.bannerContainer .controlsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 3;
+    padding-right: var(--spacing);
+}
+
+.bannerContainer .controlsContainer a {
+    margin: 6px;       
+    color: var(--blue);
+    border-radius: 50%;
+    padding: 6px;
+}
+
+.bannerContainer .controlsContainer a:hover {
+    background-color:  var(--blue);
+    color: #fff;
+}
+
+.bannerContainer .controlsContainer a i{
+    font-size: 23px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    
+}
+
+nav a {
+    padding: 10px;
+    font-size: 30px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #212529;
+    position: relative;
+}
+
+nav a.blue {
+    color: var(--blue);
+}
+
+nav a.blue img{
+    width: 75px;
+    height: 75px;
+}
+
+nav a:hover {
+    background-color: var(--buttonHoverBg);
+    color: var(--blue);
+    border-radius: 50%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.wrapper > .row {
+    margin: 0;
+    height: 100%;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    color: var(--greyButtonText);
+}
+
+button i,
+button span {
+    pointer-events: none;
+}
+
+.mainSectionContainer {
+    padding:  var(--spacing);   
+    margin-left:  55px;   
+    border-left: 4px solid var(--lightGrey);
+    border-right: 1px solid var(--lightGrey);
+    display: flex;
+    flex-direction: column;
+    background-color: 	#F5F5F5;
+}
+
+/* .rightContainer {
+    background: conic-gradient(from 240deg at 90% -10%, #fffafa, #fefafa, #fdf9f9, #fcf9f9, #fbf8f8, #faf8f8, #faf7f7, #f9f7f7, #f8f6f6, #f7f6f6, #f6f5f5, #f5f5f5);    
+} */
+
+
+.titleContainer {
+    
+    padding: var(--spacing);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--lightGrey);
+    flex-shrink: 0;
+    color: var(--greyText);
+    font-size: 22px;
+    font-family: 'Aileron-HeavyItalic';
+}
+
+.titleContainer h1 {
+    flex: 1;
+}
+
+.postFormContainer {
+    display: flex;
+    padding: var(--spacing);
+    border-bottom: 10px solid rgb(230, 236, 240);
+    flex-shrink: 0;
+}
+
+.modal .postFormContainer {
+    border: none;
+    padding: 0;
+    padding-top: var(--spacing);
+}
+
+.modal .post {
+    padding: 0 0 var(--spacing) 0;
+}
+
+.userImageContainer {
+    width: 50px;
+    height: 50px;
+}
+
+.userImageContainer img {
+    width: 100%;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.textareaContainer {
+    flex: 1;
+    padding-left: var(--spacing);
+}
+
+.textareaContainer textarea {
+    width: 100%;
+    border: 1px solid var(--lightGrey);
+    resize: none;
+    font-size: 19px;
+}
+
+#submitPostButton {
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 40px;
+    padding: 7px 15px;
+}
+
+#submitPostButton:disabled {
+    background-color: var(--blueLight);
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing);
+    cursor: pointer;
+    border-bottom: 1px solid var(--lightGrey);
+    flex-shrink: 0;
+}
+
+.mainContentContainer {
+    flex: 1;
+    display: flex;
+    overflow-y: hidden;
+}
+
+.postContentContainer {
+    padding-left: var(--spacing);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.username,
+.date {
+    color: var(--greyText)
+}
+
+.displayName {
+    font-weight: bold;
+}
+
+.postFooter {
+    display: flex;
+    align-items: center;
+}
+
+.postFooter .postButtonContainer {
+    flex: 1;
+    display: flex;
+}
+
+.postFooter .postButtonContainer button {
+    padding: 2px 5px;
+}
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+.header a,
+.header span {
+    padding-right: 5px;
+}
+
+.postButtonContainer button:hover {
+    background-color: #d4edff;
+    color: var(--blue);
+    border-radius: 50%;
+}
+
+.postButtonContainer.red button.active {
+    color: var(--red);
+}
+
+.postButtonContainer.red button:hover {
+    color: var(--red);
+    background-color: var(--redBackground)
+}
+
+.postButtonContainer.green button.active {
+    color: var(--green);
+}
+
+.postButtonContainer.green button:hover {
+    color: var(--green);
+    background-color: var(--greenBackground)
+}
+
+.postActionContainer {
+    padding-left: 35px;
+    font-size: 13px;
+    color: var(--greyText);
+    margin-bottom: 5px;
+}
+
+.replyFlag {
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #0c7e90;
+    
+}
+
+.replyFlag a {
+    color: var(--blue);
+}
+
+.post.largeFont .postBody,
+.post.largeFont .postFooter {
+    font-size: 23px;
+}
+
+.postContentContainer .header {
+    display: flex;
+}
+
+.postContentContainer .header .date {
+    flex: 1;
+}
+
+.errorMessage {
+    padding: var(--spacing);
+}
+
+.coverPhotoSection {
+    height: 180px;
+    background-color: var(--blue);
+    position: relative;
+}
+
+.profileHeaderContainer .userImageContainer {
+    width: 132px;
+    height: 132px;
+    margin-left: var(--spacing);
+    position: absolute;
+    bottom: -66px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profileHeaderContainer .userImageContainer img {
+    border: 4px solid #fff;
+}
+
+.profileHeaderContainer .profileButtonsContainer {
+    text-align: right;
+    padding: var(--spacing);
+    min-height: 66px;
+}
+
+.removedPostContainer {    
+    color: var(--greyButtonText);
+    padding-top: var(--spacing);
+    font-size:20px;    
+    border: 2px solid var(--greyText);    
+    margin: var(--spacing);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.34);
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.34);
+    -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.34); 
+}
+
+.removedPostContainer h4 {
+    padding-left: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.removedPost {    
+    justify-content: center;
+    align-items: center;
+    color: #96999a;
+    font-size: 18px;
+    content: border-box;
+    padding: var(--spacing);
+}
+
+.removedPost i {
+    justify-content: center;
+    align-items: center;
+    background-color: var(--buttonHoverBg);    
+    border-radius: 50%;
+}
+
+.profileButton,
+.followButton {
+    border: 1px solid var(--blue);
+    color: var(--blue);
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 60px;
+    display: inline-block;
+    margin-left: var(--spacing);
+}
+
+.profileButton:hover,
+.followButton:hover {
+    background-color: var(--blueBackground);
+}
+
+.followButton.following {
+    background-color: var(--blue);
+    color: #fff;
+}
+
+.profileHeaderContainer .userDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--spacing);
+}
+
+.followersContainer .value {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.followersContainer span:not(.value) {
+    color: var(--greyText);
+}
+
+.followersContainer a {
+    margin-right: 15px;
+}
+
+.followersContainer a:hover {
+    border-bottom: 1px solid #000;
+}
+
+.tabsContainer {
+    display: flex;
+    border-bottom: 1px solid var(--lightGrey);
+    flex-shrink: 0;
+}
+
+.tab {
+    flex: 1;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--greyText);
+    font-weight: bold;
+}
+
+.tab.active {
+    color: var(--blue);
+    border-bottom: 2px solid var(--blue);
+}
+
+.tab:hover {
+    color: var(--blue);
+    background-color: var(--blueBackground);
+}
+
+.noResults {
+    padding: var(--spacing);
+    border: 0.05px solid #b8abab;
+    display: inline-block;
+    
+    border-radius: 5px;
+    background-color: rgba(197, 201, 197, 0.15);
+}
+
+.resultsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.resultsContainer .user {
+    padding: var(--spacing);
+    display: flex;
+    border-bottom: 1px solid var(--lightGrey);
+}
+
+ .graduationBatch {
+    display: flex;
+    color: var(--greyButtonText);
+    font-size: 18px;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+
+.user .userDetailsContainer {
+    flex: 1;
+    padding: 0 var(--spacing)
+}
+
+.profilePictureButton,
+.coverPhotoButton {
+    position: absolute;
+    font-size: 50px;
+    color: rgba(0,0,0,0.6);
+    display: none;
+}
+
+.userImageContainer:hover .profilePictureButton,
+.coverPhotoSection:hover .coverPhotoButton {
+    display: block;
+}
+
+.coverPhotoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.coverPhotoContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#imagePreview,
+#coverPreview {
+    width: 100%;
+    display: block;
+ 
+    /* This rule is very important, please don't ignore this */
+    max-width: 100%;
+}
+
+.pinButton.active {
+    color: var(--blue);
+}
+
+.pinnedPostText {
+    font-size: 12px;
+    color: var(--greyText);
+}
+
+.pinnedPostContainer {
+    border-bottom: 10px solid rgb(230,236,240);
+}
+
+.searchBarContainer {
+    position: relative;
+    color: var(--greyText);
+    padding: 10px var(--spacing);
+}
+
+.searchBarContainer i {
+    position: absolute;
+    top: 20px;
+    left: 28px;
+}
+
+.searchBarContainer #searchBox {
+    height: 36px;
+    width: 100%;
+    padding: 5px 15px 5px 40px;
+    border-radius: 50px;
+    background-color: var(--lightGrey);
+    border: none;
+    color: var(--greyText);
+}
+
+
+.chatPageContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    flex: 1;
+    flex-basis: 0;
+}
+
+.chatTitleBar {
+    border-bottom: 1px solid var(--lightGrey);
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+    padding: 10px;
+}
+
+.chatTitleBar label {
+    margin: 0 10px 0 0;
+}
+
+#userSearchTextbox {
+    border: none;
+    flex: 1;
+    font-weight: 200;
+    min-width: 350px;
+}
+
+#createChatButton {
+    border: none;
+    background-color: var(--blue);
+    color: #fff;
+    padding: 7px 20px;
+    margin: 10px auto;
+    border-radius: 40px;
+}
+
+#createChatButton:disabled {
+    background-color: var(--lightGrey);
+    color: var(--greyText);
+}
+
+.selectedUser {
+    font-weight: 300;
+    background-color: #CBE5FE;
+    color: #0084ff;
+    padding: 5px;
+    border-radius: 3px;
+    margin: 5px 5px 0 0;
+    display: inline-block;
+}
+
+.resultListItem {
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    border-bottom: 1px solid var(--lightGrey);
+}
+
+.resultListItem:hover {
+    background-color: #F2F2F2;
+}
+
+.resultsDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.resultsDetailsContainer .heading {
+    font-weight: 500;
+}
+
+.resultsDetailsContainer .subText {
+    color: var(--greyText);
+    font-size: 14px;
+}
+
+.resultListItem img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.resultsImageContainer {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.groupChatImage img {
+    height: 65%;
+    width: 65%;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    border: 2px solid #fff;
+}
+
+.groupChatImage img:first-of-type {
+    top: 0;
+    right: 0;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chatTitleBarContainer {
+    border-bottom: 1px solid var(--lightGrey);
+    display: flex;
+    align-items: center;
+    padding: var(--spacing);
+}
+
+#chatName {
+    width: 100%;
+    border: 1px solid transparent;
+    padding: 0 5px;
+}
+
+#chatName:hover {
+    border: 1px solid var(--lightGrey);
+    cursor: text;
+}
+
+.chatContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+}
+
+.chatContainer .footer {
+    display: flex;
+    padding: var(--spacing);
+    flex-shrink: 0px;
+}
+
+.chatContainer .footer textarea {
+    flex: 1;
+    resize: none;
+    background-color: rgba(0,0,0,0.05);
+    border-radius: 18px;
+    border: none;
+    padding: 8px 12px;
+    height: 38px;
+}
+
+.chatContainer .footer button {
+    background-color: transparent;
+    color: var(--blue);
+    font-size: 24px;
+}
+
+.chatMessages {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: var(--spacing);
+}
+
+.chatImagesContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100%;
+    margin-right: 10px;
+}
+
+.chatImagesContainer img {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+.chatImagesContainer .userCount {
+    height: 40px;
+    width: 40px;
+    background-color: #f1f1f1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border: 2px solid #fff;
+}
+
+.chatImagesContainer img:not(:last-child),
+.chatImagesContainer .userCount {
+    margin-left: -10px;
+}
+
+#chatNameTextbox {
+    width: 100%;
+}
+
+.chatMessages .message {
+    padding-bottom: 2px;
+    list-style: none;
+    display: flex;
+    align-items: flex-end;
+    flex-shrink: 0;    
+}
+
+.typingDots img,
+.chatMessages .message .messageBody {
+    background-color: #f1f0f0;
+    padding: 6px 12px;
+    border-radius: 18px;
+    font-size: 14px;
+}
+
+.typingDots img {
+    height: 36px;
+}
+
+.typingDots {
+    padding: var(--spacing);
+    padding-bottom: 0;
+    display: none;
+}
+
+.chatMessages .message .messageContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 55%;
+}
+
+.chatMessages .message.mine .messageContainer {
+    align-items: flex-end;
+}
+
+.chatMessages .message.theirs .messageContainer {
+    align-items: flex-start;
+}
+
+.chatMessages .message.mine {
+    flex-direction: row-reverse;
+}
+
+.chatMessages .message.mine .messageBody {
+    background-color: var(--blue);
+    color: #fff;
+}
+
+.chatMessages .message.mine.first .messageBody {
+    border-bottom-right-radius: 2px;
+}
+
+.chatMessages .message.mine:not(.first):not(.last) .messageBody {
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.chatMessages .message.mine.last .messageBody {
+    border-bottom-right-radius: 18px;
+}
+
+.chatMessages .message.mine.last:not(.first) .messageBody {
+    border-top-right-radius: 2px;
+}
+
+.chatMessages .message.theirs.first .messageBody {
+    border-bottom-left-radius: 2px;
+}
+
+.chatMessages .message.theirs:not(.first):not(.last) .messageBody {
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+}
+
+.chatMessages .message.theirs.last .messageBody {
+    border-bottom-left-radius: 18px;
+}
+
+.chatMessages .message.theirs.last:not(.first) .messageBody {
+    border-top-left-radius: 2px;
+}
+
+.senderName {
+    color: rgba(0,0,0,0.5);
+}
+
+.chatMessages .imageContainer {
+    height: 24px;
+    width: 24px;
+    margin-right: 7px;
+}
+
+.chatMessages img {
+    height: 100%;
+    border-radius: 50%;
+    vertical-align: bottom;
+}
+
+.chatMessages .message.last {
+    margin-bottom: 14px;
+}
+
+.loadingSpinnerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.loadingSpinnerContainer img {
+    width: 50%;
+    max-width: 70px;
+}
+
+.resultListItem.active {
+    background-color: var(--blueBackground);
+}
+
+.resultListItem.notification * {
+    pointer-events: none;
+}
+
+#notificationsBadge, #messagesBadge {
+    background-color: var(--red);
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    position: absolute;
+    top: 9;
+    right: 54;
+    color: #fff;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+#notificationsBadge.active, #messagesBadge.active {
+    visibility: visible;
+}
+
+#notificationList {
+    background-color: #fff;
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    width: 380px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.34);
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.34);
+    -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.34);
+}
+
+#notificationList .active{
+    background-color: #fff;
+}
+
+.notAvailable {
+    border: 0.05px solid #b8abab;
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    background-color: rgba(197, 201, 197, 0.15);
+}
+
+#homeButton,
+#licenseButton, 
+#facultyAddButton,
+#eventsButton, 
+#batchesButton, 
+#searchButton, 
+#notificationsButton,
+#messagesButton,
+#myProfileButton,
+#logoutButton {
+    font-size: 12px;    
+    position: absolute;
+    top: 16px;
+    right: 50px;
+    color:var(--greyText);    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;      
+}
+
+.homeButtonContainer:hover #homeButton,
+.licenseButtonContainer:hover #licenseButton,
+.addFacultyButtonContainer:hover #facultyAddButton,
+.eventsButtonContainer:hover #eventsButton,
+.batchesButtonContainer:hover #batchesButton,
+.searchButtonContainer:hover #searchButton,
+.notificationsButtonContainer:hover #notificationsButton,
+.messagesButtonContainer:hover #messagesButton,
+.myProfileButtonContainer:hover #myProfileButton,
+.logoutButtonContainer:hover #logoutButton {
+    visibility: visible;
+}
+
+input[type="text"],input[type="email"],input[type="password"],input[type="date"],input[type="datetime-local"],select  {
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    border-radius: 2px;
+    border: 1px solid #dedede;
+    background-color: #f2f2f2;
+    display: block;
+}
+
+input[type="submit"] {
+    background-color: #0099ff;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.cardUpdateButton {
+    background-color: #0099ff;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    margin-bottom: 10px; 
+}
+
+.directoryContainer {
+    display: flex;
+    flex-direction: row;   
+}
+
+.directoryContainer > .indexContainer {
+    
+    height: 100%;
+}
+
+.indexContainer {
+    padding: none; 
+    border-right: 2px solid var(--lightGrey);         
+    align-items: flex-end;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+.indexContainer button {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid var(--lightGrey);
+    color: var(--greyText);
+    font-weight: 300;
+    margin: 2px;    
+}
+
+.indexContainer button:hover {    
+    color: var(--green);
+    cursor: pointer;
+}
+
+.indexContainer #directoryLogo {
+    font-size: 110px;
+    color: var(--blue);
+    padding: var(--spacing);
+    margin: var(--spacing);
+    border-bottom: 2px solid var(--lightGrey);
+}
+
+.usersContainer{    
+    flex: 2;
+}
+
+.usersContainer .user {
+    border-bottom: 1px solid var(--lightGrey);
+    padding-top: var(--spacing);
+    padding-bottom: var(--spacing);
+    display: flex;
+    flex-direction: row;
+}
+
+.usersContainer .listOfUsers {
+    padding: var(--spacing);
+}
+
+.usersContainer .groupBanner {
+    width: 100%;
+    height: 285px;
+    display: flex;
+    flex-direction: column;
+    flex: 2;        
+    align-items: center;
+    padding: 0;
+    border-bottom: 1px solid var(--lightGrey);
+}
+
+.usersContainer .groupBanner .groupHeaderContainer {
+    display: flex;
+    flex-direction: column;
+    background: var(--blueLight);
+    background: -webkit-linear-gradient(to right, var(--blue), #4682B4, #314755);
+    background: linear-gradient(to right, var(--blue), #4682B4, #314755);
+    
+    flex: 2;
+    width: 100%;
+}
+
+.usersContainer .groupBanner .groupHeaderContainer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.usersContainer .groupBanner .groupFooterContainer {
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;    
+    width: 100%;
+    position: relative;
+    top: -27px;
+    left: 0px;
+    border-radius: 50%;
+}
+
+.usersContainer .groupBanner .groupFooterContainer img {
+   
+    border-radius: 50%;
+}
+
+.imgClassSmall {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 50%;
+}
+
+.usersContainer .groupBanner .detailsContainer {
+    display: flex;  
+    flex-direction: column;  
+    width: 100%;    
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.usersContainer .groupBanner .detailsContainer .groupText{
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--blue);
+
+}
+
+.pageHeaderContainer {
+    height: 100px;
+    width: 100%;
+    font-size: 36px;
+    background-color: var(--blue);
+    color: #fff;
+    font-weight: 600;
+    padding: var(--spacing);
+    border: 2px solid var(--blueLight);
+}
+
+.formContainer {
+    padding: 20px;
+    width: 100%;    
+    border: 1px solid #dedede;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+.activityContainer .activity {
+    display: block;
+    flex-direction: column;
+    padding: var(--spacing);
+    cursor: pointer;
+    border-bottom: 1px solid var(--lightGrey);
+    flex-shrink: 0;
+}
+
+.activityTitle {
+    width: 100%;    
+    background-color: var(--blue);
+    padding: var(--spacing);
+}
+
+.activityTitleName {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.activityDescription {
+    color:var(--blueLight);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.activityImageContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.imageReviewContainer {    
+    display: flex;
+    flex-direction: column;
+}
+
+.imageUploadElement{
+    width: 100px;
+    height: 100px;
+    padding: var(--spacing);
+    border: 2px dotted var(--greyText);
+    align-items: center;
+    justify-content: center;  
+    margin: 10px;  
+    display: flex;
+}
+
+.imageUploadElement i{
+    font-size: 55px;    
+}
+
+.imageReviewContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.imageReviewContainer img {
+    
+    width: 150px;
+    height: 150px;    
+    padding: var(--spacing);
+}
+
+#activityImagePreview {
+    width: 100%;
+    display: block;
+ 
+    /* This rule is very important, please don't ignore this */
+    max-width: 100%;
+}
+
+.eventsContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;    
+    width: 100%;
+    padding-top: var(--spacing);
+}
+
+/* button.eventsContainer {
+    border: none;
+} */
+
+.eventElement {
+    display: flex;   
+    flex-direction: column;    
+    width: 100%;  
+       
+}
+
+.eventElement .event {
+    display: flex;   
+    flex-direction: row;
+    border-bottom: 1px solid var(--lightGrey);    
+    width: 100%;    
+    padding-top: var(--spacing); 
+    padding-bottom: var(--spacing);    
+}
+
+
+.event .leftContainer {
+    display: flex;
+    flex: 2;
+    align-items: center;
+    justify-content: center;
+}
+
+.event .middleContainer {
+    display: flex;
+    flex: 4;
+    flex-direction: column;
+}
+
+.event .rightContainer {
+    display: flex;
+    flex: 2;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.event .middleContainer .headerContainer{
+    display: flex;
+    flex: 1;
+    font-size: 22px;
+    font-weight: 600;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: var(--blue);
+}
+
+.event .middleContainer .footerContainer{
+    display: flex;
+    flex: 1;
+    font-size: 12px; 
+    color: #708090;   
+    font-weight: 500;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.event .rightContainer .item1,
+.event .rightContainer .item2,
+.event .rightContainer .item3{
+    display: flex;
+    flex: 1;
+    font-size: 14px;    
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #657786;
+}
+
+/* calendar styling */
+
+.event .leftContainer .calendarIcon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--lightGrey);
+    background-color: #fff;
+    width: 100px;
+    height: 75px; 
+    border-radius: var(--spacing);
+    border-radius: var(--spacing);
+}
+
+
+
+.event .leftContainer .calendarIcon .month{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+    background-color: #ffa500;
+    font-size: 14px;
+    color: #fff;
+    width: 100%;
+    border-top-left-radius: var(--spacing);
+    border-top-right-radius: var(--spacing);
+    border-bottom: 1px dashed var(--lightGrey);
+}
+
+.event .leftContainer .calendarIcon .month .binder {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    font-size: 6px;
+    width: 100%;
+}
+
+.event .leftContainer .calendarIcon .month .binder .binderLeft, 
+.event .leftContainer .calendarIcon .month .binder .binderRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    font-size: 6px;
+    width: 100%;
+}
+
+.event .leftContainer .calendarIcon .month .monthContent {
+    display: flex;    
+    flex: 3;
+    font-size: 14px;
+}
+
+.event .leftContainer .calendarIcon .date{
+    display: flex;
+    flex: 2;
+    align-items: center;
+    justify-content: center;     
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--greyButtonText);
+    width: 100%;
+}
+
+.event .leftContainer .calendarIcon .year{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;    
+    background-color: #fff;
+    font-size: 12px;
+    color: #ffa500;
+    width: 100%;
+    border-bottom-left-radius: var(--spacing);
+    border-bottom-right-radius: var(--spacing);
+}
+
+#eventElementModal .modal-dialog .modal-content .modal-body {
+    display: flex;
+    flex-direction: column;  
+    padding: none;  
+}
+
+#eventElementModal .modal-content .modal-footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#eventElementModal .modal-dialog .modal-content .modal-body #activityElementContainer {
+     background-color: #d4cccc;
+     display: flex;
+     flex: 1;
+     align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+ }
+
+ /* #eventElementModal .modal-dialog .modal-content .modal-body #activityElementContainer .postBody{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-start;
+} */
+
+ #eventElementModal .modal-dialog .modal-content .modal-footer #activityImageContainer {    
+     flex: 1;
+     border: 1px solid var(--lightGrey);
+     margin-bottom: var(--spacing);
+ }
+
+ #carouselExampleControls .carousel-indicators {
+     display: flex;
+     width: 50px;
+     height: 50px;
+     border-radius: 5px;
+     background-color: #212529;
+ }
+
+.carousel-item img {
+    min-width: 650px;
+    max-width: 650px;
+    min-height: 350px;
+    max-height: 350px;
+}
+
+.imageNavButtonContainer {
+    background-color: var(--blue);
+    padding: 2px;    
+}
+
+.imageNavButtonContainer i {
+    color: #fff;
+    font-size: 26px;
+}
+
+.eventDate {
+    color: var(--greyButtonText);
+    display: flex;
+    font-size: 16px;
+}
+
+/* Announcements styles */
+.announcementContainer {
+    padding-top: var(--spacing);
+    padding-bottom: var(--spacing);
+    display: flex;
+    flex-direction: column;    
+    width: 100%;  
+    
+}
+
+.announcementContainer .announcementEvent{
+    padding-top: var(--spacing);
+    padding-bottom: var(--spacing);
+    display: flex;
+    flex-direction: column;    
+    width: 100%;   
+    border-bottom: 1px solid #fff; 
+}
+
+.announcementContainer .announcementEvent:hover {
+    border-bottom: 1px solid #c4c4c4;
+}
+
+.announcementContainer .announcement {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 80px;
+    align-items: center;
+    justify-content: center;          
+}
+
+
+
+.announcement .leftContainer {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    margin: var(--spacing);
+}
+
+.announcement .leftContainer img {
+    width: 42px;
+    height: 75px;
+    object-fit: cover;
+}
+
+.announcement .middleContainer {
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    align-items: flex-start;    
+    border: none;
+    margin: var(--spacing);
+}
+
+.announcement .middleContainer .headerContainer {
+    display: flex;    
+    align-items: flex-start;
+    justify-content: flex-end;
+    border: none;  
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--blue);  
+}
+
+.announcement .middleContainer .centerContainer{
+    display: flex;    
+    align-items: flex-start;
+    justify-content: flex-start;
+    border: none;    
+}
+
+.announcement .middleContainer .footerContainer{
+    display: flex;    
+    align-items: flex-start;
+    justify-content: flex-start;
+    border: none;   
+    font-size: 14px; 
+    font-weight: 500;
+    color: #657786;
+}
+
+.announcement .rightContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border: none;
+    margin: var(--spacing); 
+}
+
+.announcement .rightContainer .calendarIcon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--lightGrey);
+    background-color: #fff;
+    width: 40%;
+    height: 75%; 
+    border-radius: var(--spacing);
+    border-radius: var(--spacing);
+}
+
+
+
+.announcement .rightContainer .calendarIcon .month{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+    background-color: #ffa500;
+    font-size: 14px;
+    color: #fff;
+    width: 100%;
+    border-top-left-radius: var(--spacing);
+    border-top-right-radius: var(--spacing);
+    border-bottom: 1px dashed var(--lightGrey);
+}
+
+.announcement .rightContainer .calendarIcon .month .binder {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    font-size: 6px;
+    width: 100%;
+}
+
+.announcement .rightContainer .calendarIcon .month .binder .binderLeft, 
+.announcement .rightContainer .calendarIcon .month .binder .binderRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    font-size: 6px;
+    width: 100%;
+}
+
+.announcement .rightContainer .calendarIcon .month .monthContent {
+    display: flex;    
+    flex: 3;
+    font-size: 14px;
+}
+
+.announcement .rightContainer .calendarIcon .date{
+    display: flex;
+    flex: 2;
+    align-items: center;
+    justify-content: center;     
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--greyButtonText);
+    width: 100%;
+}
+
+.announcement .rightContainer .calendarIcon .year{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;    
+    background-color: #fff;
+    font-size: 12px;
+    color: #ffa500;
+    width: 100%;
+    border-bottom-left-radius: var(--spacing);
+    border-bottom-right-radius: var(--spacing);
+}
+
+/* Announcement Modal Styling */
+
+#announcementModal #announcementModalContainer {
+    display: flex;
+    flex-direction: row;    
+}
+
+#announcementModal .modal-header {
+    width: 100%;
+    height: 100%;    
+}
+
+#announcementModal .modal-header #announcementModalLabel {
+    width: 100%;
+}
+
+#announcementModal .modal-header #announcementModalLabel .announcementModalHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    font-size: 21px;
+    font-weight: 600;
+    color: #314755;
+}
+
+
+#announcementModal #announcementModalContainer .modalContent{
+    width: 100%;
+    height: 100%;    
+}
+
+#announcementModal #announcementModalContainer .announcementModalImageContainer{
+    display: flex;    
+    flex: 2;
+    align-items: center;
+    justify-content: center;
+}
+
+#announcementModal #announcementModalContainer .announcementModalImageContainer img{
+    width: 285px;
+    height: 480px;    
+    border: 1px solid var(--lightGrey);
+}
+
+#announcementModal .modal-footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;    
+}
+
+
+
+#announcementModal .announcementModalContentContainer .announcementContent{
+    color: var(--greyText);
+    font-size: 18px;
+    font-weight: 400;
+    align-items: center;
+    justify-content: center;  
+    flex-direction: column;  
+    
+}
+
+#announcementModal .modal-footer .announcementModalContentContainer .buttonsContainer{
+    color: var(--greyText);
+    font-size: 13px;
+    font-weight: 500;
+    align-items: flex-start;
+    justify-content: flex-start;  
+    display: flex;
+    flex-direction: column;     
+    margin-bottom: 7px;
+}
+
+#announcementModal .modal-footer .announcementModalContentContainer .buttonsContainer .item1,
+#announcementModal .modal-footer .announcementModalContentContainer .buttonsContainer .item2{
+    flex: 1;
+    align-items: center;
+    justify-content: flex-start;  
+    display: flex;    
+}
+
+#announcementModal .modal-footer .announcementModalContentContainer .buttonsContainer .item3{
+    flex: 3;
+    align-items: center;
+    justify-content: flex-start;  
+    display: flex;
+    margin-top: 5px;    
+}
+
+#announcementModal .modal-footer .announcementModalContentContainer .buttonsContainer .item3 a {
+    font-size: 17px;
+    font-weight: 500;
+    color: #1FA2F1;
+}
+
+#announcementModal .modal-footer .announcementModalContentContainer .contentContainer{
+    color: var(--greyText);
+    font-size: 18px;
+    font-weight: 400;
+    align-items: center;
+    justify-content: center;  
+      
+}
+
+
+/* Handler announcement styles */
+
+.handlerAddImageButton {
+    width: 100%;
+    border: none;
+    background-color: var(--blue);
+    color: #fff;
+    margin-top: var(--spacing);
+    margin-bottom: var(--spacing);
+}
+
+.handlerAddImageButton:hover{
+    background-color: var(--green);
+}
+
+.handlerDeleteAnnouncementButton {
+    width: 100%;
+    border: none;
+    background-color: var(--blue);
+    color: #fff;
+    margin-top: var(--spacing);
+    margin-bottom: var(--spacing);
+}
+
+.handlerDeleteAnnouncementButton:hover{
+    background-color: red;
+}
+
+/* Council Management styles */
+
+.createCouncilButtonContainer  {
+    display: flex;
+    padding: var(--spacing);
+    width: 100%;
+    border-bottom: 1px solid var(--lightGrey);
+    align-items: center;
+    justify-content: center;
+}
+
+.createCouncilButtonContainer .createCouncilButton {
+    display: flex;
+    width: 80%;
+    background-color: var(--blue);
+    color: #fff;
+    border-radius: var(--spacing);
+    padding: var(--spacing);
+    font-size: 22px;
+    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+}
+
+#councilCreateModal .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#councilCreateModal .modal-header #councilCreateModalLabel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 600;
+    width: 100%;
+    color: #212529;
+}
+
+#councilCreatemodal .newCouncilFormContainer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#councilCreateModal .newCouncilFormContainer #tenureStartId,
+#councilCreateModal .newCouncilFormContainer #tenureCloseId,
+#councilCreateModal .newCouncilFormContainer #councilMessage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: var(--spacing);
+    margin-bottom: var(--spacing);
+    width: 100%;
+}
+
+#councilCreateModal .newCouncilFormContainer #startLabel,
+#councilCreateModal .newCouncilFormContainer #closeLabel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: var(--spacing);
+    margin-bottom: var(--spacing);
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    color: #314755;
+}
+
+.councilsListContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.councilsListContainer .councilElement {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 80px;
+    align-items: flex-start;
+    justify-content: center;
+    padding-bottom: var(--spacing);
+    border: 1px solid #9BD1F9;
+    border-radius: 6px;
+    padding-top: var(--spacing);
+    margin-bottom: 3px;
+    cursor: pointer;
+}
+
+.councilsListContainer .councilElement:hover {
+    background-color: #9BD1F9;
+}
+
+.councilsListContainer .councilElement  .councilTagLine {
+    display: flex;
+    flex: 2;
+    font-size: 27px;
+    color: #314755;
+    font-weight: 700;
+    align-items: center;
+    justify-content: flex-start; 
+    padding-left: var(--spacing);
+    height: 100%;
+    width: 100%;   
+}
+
+.councilsListContainer .councilElement  .councilState{
+    display: flex;
+    flex: 2;
+    font-size: 20px;
+    color: #96999a;
+    opacity: 0.5;
+    font-weight: 400;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+}
+
+.councilsListContainer .councilElement  .councilState.activeCouncil{    
+    color: var(--green);
+    font-weight: 400;
+}
+
+.councilsListContainer .councilElement  .councilState.inactiveCouncil{    
+    color: var(--red);
+    font-weight: 400;
+}
+
+/* Council update styles */
+
+.councilInformationContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    margin-bottom: var(--spacing);
+}
+
+.councilInformationContainer .councilInformationHeader {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--blue);
+    color: #fff;
+}
+
+.councilInformationContainer .councilInformationHeader .councilName{
+    display: flex;
+    flex: 2;
+    font-size: 24px;
+    font-weight: 700;
+    align-items: center;
+    justify-content: flex-start;
+    padding: var(--spacing);
+}
+
+.councilInformationContainer .councilInformationHeader .buttonContainer{
+    display: flex;
+    flex: 2;
+    font-size: 14px;
+    font-weight: 700;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.councilInformationContainer .councilInformationHeader .buttonContainer .addMemberButton{
+    background-color: #fff;
+    color: var(--blue);
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-right: var(--spacing);
+    border-radius: var(--spacing);
+    cursor: pointer;
+}
+
+.councilInformationContainer .councilInformationHeader .buttonContainer .addMemberButton:hover{
+    background-color: #02dbac;
+    color: #fff;
+}
+
+.councilInformationContainer .councilInformationHeader .buttonContainer .activateCouncilButton{
+    background-color: #fff;
+    color: var(--blue);
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-left: var(--spacing);
+    border-radius: var(--spacing);
+    cursor: pointer;
+}
+
+.councilInformationContainer .councilInformationHeader .buttonContainer .activateCouncilButton:hover{
+    background-color: #02dbac;
+    color: #fff;
+}
+
+.councilInformationContainer .councilDescription {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 16px;
+    color: #314755;
+}
+
+.councilMembersContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+}
+
+.councilMembersContainer .headerContainer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--blue);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    padding: var(--spacing);
+}
+
+.councilMembersContainer .footerContainer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-top: var(--spacing);
+}
+
+.councilMembersContainer .footerContainer .memberElement{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding-top: 3px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.34);
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.34);
+    -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.34); 
+}
+
+.councilMembersContainer .footerContainer .memberElement .elementHeaderContainer{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex: 3;
+    margin-bottom: 3px;
+}
+
+.councilMembersContainer .footerContainer .memberElement .elementHeaderContainer .memberImageContainer{
+    display: flex;
+    width: 100%;    
+    flex: 2;
+    align-items: center;
+    justify-content: center;
+}
+
+.councilMembersContainer .footerContainer .memberElement .elementHeaderContainer .memberImageContainer img{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+
+.councilMembersContainer .footerContainer .memberElement .elementHeaderContainer .memberDescriptionContainer{
+    display: flex;
+    width: 100%;    
+    flex: 6;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.councilMembersContainer .footerContainer .memberElement .elementHeaderContainer .memberDescriptionContainer .text1{
+    display: flex;
+    width: 100%;    
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--blue);
+}
+
+.councilMembersContainer .footerContainer .memberElement .elementHeaderContainer .memberDescriptionContainer .text2{
+    display: flex;
+    width: 100%;    
+    font-size: 16px;
+    font-weight: 300;
+    color: #657786;
+}
+
+.councilMembersContainer .footerContainer .memberElement .elementHeaderContainer .memberDescriptionContainer .text3{
+    display: flex;
+    width: 100%;    
+    font-size: 18px;
+    font-weight: 400;
+    color: #314755;
+}
+
+.councilMembersContainer .footerContainer .memberElement .elementHeaderContainer .memberDeleteButtonContainer{
+    display: flex;
+    width: 100%;    
+    flex: 1;
+    padding-top: 5px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.councilMembersContainer .footerContainer .memberElement .elementHeaderContainer .memberDeleteButtonContainer i{
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.councilMembersContainer .footerContainer .memberElement .elementHeaderContainer .memberDeleteButtonContainer:hover i{
+    color: var(--red);
+}
+
+.councilMembersContainer .footerContainer .memberElement .elementFooterContainer{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex: 2;
+    background-color: #F2F2F2;
+}
+
+.councilMembersContainer .footerContainer .memberElement .elementFooterContainer .footerButton{
+    display: flex;
+    width: 100%;
+    padding: var(--spacing);
+    flex: 2;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.councilMembersContainer .footerContainer .memberElement .elementFooterContainer .footerButton button#presButton span#presTag,
+.councilMembersContainer .footerContainer .memberElement .elementFooterContainer .footerButton button#secButton span#secTag,
+.councilMembersContainer .footerContainer .memberElement .elementFooterContainer .footerButton button#treasButton span#treasTag{
+    color: #9BD1F9;
+    font-size: 13px;
+    font-weight: 700;
+    display: block;
+    visibility: hidden;    
+}
+
+.councilMembersContainer .footerContainer .memberElement .elementFooterContainer .footerButton button#presButton:hover span#presTag{
+    visibility: visible;    
+}
+
+.councilMembersContainer .footerContainer .memberElement .elementFooterContainer .footerButton button#secButton:hover span#secTag{
+    visibility: visible;    
+}
+
+.councilMembersContainer .footerContainer .memberElement .elementFooterContainer .footerButton button#treasButton:hover span#treasTag{
+    visibility: visible;    
+}
+
+.councilMembersContainer .footerContainer .memberElement .elementFooterContainer .footerButton button#presButton.activeNow i{
+    color: #ffa500;
+    font-size: 18px;
+    font-weight: 900;
+}      
+
+.councilMembersContainer .footerContainer .memberElement .elementFooterContainer .footerButton button#secButton.activeNow i{
+    color: #ffa500;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.councilMembersContainer .footerContainer .memberElement .elementFooterContainer .footerButton button#treasButton.activeNow i{
+    color: #ffa500;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+#addMemberModal .modal-header .modal-title {
+    width: 100%;
+}
+
+#addMemberModal .modal-header input#memberSearchTextbox {
+    width: 100%;
+    border-radius: var(--spacing);
+}
+
+.queryResultsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.queryResultsContainer .queryResult {
+    display: flex;
+    flex-direction: row;    
+    padding-top: var(--spacing);
+    padding-bottom: var(--spacing);
+    width: 100%;
+    cursor: pointer;
+}
+
+.queryResultsContainer .queryResult.selected {
+    background-color: var(--green);
+    border: 1px solid #fff;
+    cursor: not-allowed;
+}
+
+.queryResultsContainer .queryResult .imageContainer{
+    display: flex;   
+    flex: 2; 
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+}
+
+.queryResultsContainer .queryResult .imageContainer img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.queryResultsContainer .queryResult .textContainer{
+    display: flex;
+    flex-direction: column;   
+    flex: 5; 
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+}
+
+.queryResultsContainer .queryResult .textContainer .name{
+    font-size: 19px;
+    font-weight: 500;
+    color: #314755;
+}
+
+.queryResultsContainer .queryResult .textContainer .tag{
+    font-size: 15px;
+    font-weight: 500;
+    color: #4682B4;
+}
+
+/* Client side alumni council styles */
+
+.alumni {
+    display: flex;
+    flex-direction: column;
+    width: 75%;        
+}
+
+.alumni blockquote{
+    font-size: 18px;    
+    margin:10px auto;
+    font-family:"Alegreya-Medium-Italic";
+    font-style:italic;
+    color: #314755;
+    padding:0 33px 0 75px;    
+    line-height:1.6;
+    position: relative;    
+  }
+  
+.alumni blockquote::before{
+    font-family:Arial;
+    content: "\201C";
+    color: rgba(0,0,0,0.3); 
+    font-size:10em;
+    position: absolute;
+    left: 10px;
+    top:-78px;   
+}
+  
+.alumni blockquote::after{
+    content: '';
+}
+ 
+.executiveCouncil {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+    padding-top: 20px;
+}
+
+.executiveCouncil .executiveCouncilHeader{
+    padding-left: var(--spacing);
+    font-size: 18px;
+    font-weight: 900;
+    font-family: 'NugoSans-Light';
+    color: #314755;    
+}
+
+.executiveCouncil .executiveCouncilContent {
+    display: flex;
+    flex-direction: row;
+    padding-left: var(--spacing);
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.executiveCouncil .executiveCouncilContent .execMem{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: var(--spacing);
+    padding-top: var(--spacing); 
+    flex: 1;
+}
+
+.executiveCouncil .executiveCouncilContent .execMem .execMemHeader{
+    display: flex;    
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.executiveCouncil .executiveCouncilContent .execMem .execMemImage{
+    display: flex;    
+    align-items: flex-start;
+    justify-content: flex-start;    
+}
+
+.executiveCouncil .executiveCouncilContent .execMem .execMemImage img{
+    width: 250px;
+    height: 250px;
+    border-radius: 2px;   
+}
+
+.executiveCouncil .executiveCouncilContent .execMem .name{
+    font-size: 18px;
+    font-weight: 500;
+    color: #212529;    
+}
+
+.executiveCouncil .executiveCouncilContent .execMem .tag{
+    font-size: 16px;
+    font-weight: 400;
+    color: #657786;    
+}
+
+.executiveCouncil .executiveCouncilContent .execMem .email{
+    font-size: 16px;
+    font-weight: 400;
+    color: #96999a;    
+}
+
+.executiveCouncil .executiveCouncilContent .execMem .link a{
+    font-size: 17px;
+    font-weight: 500;
+    color: #26a0da;    
+}
+
+.executiveCouncil .executiveCouncilContent .execMem .link a:hover{
+    font-size: 17px;
+    font-weight: 500;
+    color: #02dbac;    
+}
+
+.associateCouncil {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+    padding-top: 20px;
+}
+
+.associateCouncil .associateCouncilHeader{
+    padding-left: var(--spacing);
+    font-size: 18px;
+    font-weight: 900;
+    font-family: 'NugoSans-Light';
+    color: #314755;    
+}
+
+.associateCouncil .associateCouncilContent{
+    display: flex;
+    flex-direction: row;
+    padding-left: var(--spacing);
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.associateCouncil .associateCouncilContent .assocMem{
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    padding: 10px;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    max-width: 150px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.34);
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.34);
+    -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.34);
+}
+
+.associateCouncil .associateCouncilContent .assocMem .assocMemHeader{
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.associateCouncil .associateCouncilContent .assocMem .assocMemImage{
+    display: flex;    
+    align-items: center;
+    justify-content: center;    
+}
+
+.associateCouncil .associateCouncilContent .assocMem .assocMemImage img{
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;   
+}
+
+.associateCouncil .associateCouncilContent .assocMem .assocMemName{
+    font-size: 18px;
+    font-weight: 500;
+    color: #212529;  
+    align-items: center;
+    justify-content: center;  
+}
+
+.associateCouncil .associateCouncilContent .assocMem .assocMemLink{
+    align-items: center;
+    justify-content: center;  
+}
+
+.associateCouncil .associateCouncilContent .assocMem .assocMemLink a{
+    font-size: 17px;
+    font-weight: 500;
+    color: #26a0da;    
+}
+
+.associateCouncil .associateCouncilContent .assocMem .assocMemLink a:hover{
+    font-size: 17px;
+    font-weight: 500;
+    color: #02dbac;    
+}

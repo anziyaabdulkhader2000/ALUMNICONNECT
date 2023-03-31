@@ -1,0 +1,15 @@
+extends layouts/login-layout.pug
+
+block content 
+    .loginContainer 
+        h1 Handler Access Login
+        form(method="post")
+
+            p.errorMessage #{errorMessage}      
+
+            input(type="text", name="logUsername", placeholder="Access Point", value=logUsername, required="")
+            input(type="password", name="logPassword", placeholder="Password", required="")
+            input(type="submit", value="Login")      
+
+        p 
+            a(href="/login") Go Back

@@ -1,0 +1,18 @@
+extends layouts/handler-layout.pug
+
+block content 
+    .formContainer 
+        h1 Create a new activity 
+
+        p.errorMessage #{errorMessage}
+
+        form(method="post")
+            input(type="text", name="activityTitle", placeholder="Name of the activity", value=activityTitle, required="")            
+            input(type="date", name="activityDate" value=activityDate required="")
+            input(type="text", name="activityVenue", placeholder="Specify Venue", value=activityVenue , required="")
+            input(type="text", name="activityAttendance", placeholder="Specify number of personnel attended the event", value=activityAttendance , required="")
+            textarea(name="activityDescription", cols="30", rows="10", placeholder="About the activity" required="") 
+            input(type="submit", value="Create Activity")
+        
+
+    

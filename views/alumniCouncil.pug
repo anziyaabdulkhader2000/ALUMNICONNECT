@@ -1,0 +1,15 @@
+extends layouts/main-layout.pug
+    
+block content
+    script.
+        var councilId = '!{councilId}'
+    .alumni        
+    .executiveCouncil 
+        .executiveCouncilHeader Executive Council            
+        .executiveCouncilContent
+    .associateCouncil
+        .associateCouncilHeader Associate Council
+        .associateCouncilContent
+
+block scripts
+    script(src="/js/alumniCouncil.js")

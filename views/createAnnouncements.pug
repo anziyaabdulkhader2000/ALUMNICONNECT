@@ -1,0 +1,15 @@
+extends layouts/handler-layout.pug
+
+block content 
+    .formContainer 
+        h1 Create a new announcement 
+
+        p.errorMessage #{errorMessage}
+
+        form(method="post")
+            input(type="text", name="announcementTitle", placeholder="Name of the event", value=announcementTitle, required="")            
+            input(type="datetime-local", name="announcementDate" value=announcementDate required="")
+            input(type="text", name="announcementVenue", placeholder="Specify Online for online meets or specify venue", value=announcementVenue , required="")
+            input(type="text", name="announcementLink", placeholder="Specify Full Link for online events", value=announcementLink)
+            textarea(name="announcementDescription", cols="30", rows="10", placeholder="About the event" required="") 
+            input(type="submit", value="Create Event Announcement")  

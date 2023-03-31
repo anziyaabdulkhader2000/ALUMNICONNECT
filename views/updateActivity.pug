@@ -1,0 +1,21 @@
+extends layouts/handler-layout.pug
+
+block content    
+    script.
+        var activityId = '!{activityId}'    
+    
+    .activityTitleContainer
+    .activityImageContainerContainer
+        .imageUploadElement
+            button.activityImageOneUploadButton(data-toggle="modal", data-target="#activityImageUploadModal")
+                i.fas.fa-camera-retro
+                          
+        .imageReviewContainer 
+            
+            
+                
+
+    +createActivityImageUploadModal()    
+
+block scripts
+    script(src="/js/updateActivity.js")
