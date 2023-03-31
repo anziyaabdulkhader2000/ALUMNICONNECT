@@ -19,11 +19,43 @@ function populateButtons(data, container) {
     container.append(buttonsHtml);
 }
 
+function onPrintClick() {
+
+    const oldData  = document.getElementById('main_body').innerHTML;
+    console.log(oldData);
+
+     const followContainer = document.getElementsByClassName('followButtonContainer');
+
+     for (let index = 0; index < followContainer.length; index++) {
+        followContainer[index].classList.add('hide_follow')
+     }
+
+    let printData = '<div class="usersContainer">'
+
+     printData += document.getElementsByClassName('usersContainer')[0].innerHTML;
+
+     printData += '</div>'
+
+    document.getElementById('main_body').innerHTML = printData;
+
+    window.print();
+    document.getElementById('main_body').innerHTML =  oldData;
+
+
+    // console.log(oldContent);
+    
+    
+}
+
 function createButtonsHtml(data) {    
-    var string = "<button onclick='populateFaculty()'><i class='fas fa-users'></i>  Fleet of faculty</button>";    
+    var string = "<button onclick='populateFaculty()'><i class='fas fa-users'></i>  Fleet of faculty</button>";  
+      
     data.forEach(buttonData => {
         string+= `<button onclick='populateResults(${buttonData})'><i class='fas fa-users'></i>  Class of ${buttonData}</button>`
-    })    
+    })  
+
+ 
+    string += `<button onClick="onPrintClick()">Print Current Data to PDF</button>`  
     return string;
 }
 
@@ -96,7 +128,7 @@ function createUserHtml(userData, showFollowButton) {
 
     var followButton = "";
     if (showFollowButton && userLoggedIn._id != userData._id) {
-        followButton = `<div class='followButtonContainer'>
+        followButton = `<div class='followButtonContainer' >
                             <button class='${buttonClass}' data-user='${userData._id}'>${text}</button>
                         </div>`;
     }
